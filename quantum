@@ -1,0 +1,415 @@
+Hi Naveen! 👋
+Absolutely. Below is the full updated content for Experiments 1–6 only, with the observation tables filled using the values from your updated qwerty.docx file. I’ve kept the same order, headings, terminology, and content style as the lab manual, so you can copy-paste it directly. �
+QIS_Lab_Manual-1-1-1.pdf
+EXPERIMENT 1
+Study of NMR Phenomenon and Signal Analysis
+1. Aim
+To understand, using an online simulator, how nuclear spins behave in a magnetic field, how an RF pulse tips them, and how the resulting Free Induction Decay (FID) signal is formed and analysed.
+2. Software / Online Simulator Required
+Bloch Simulator (DRCMR) — a free, browser-based Bloch-equation simulator that needs no installation or login.
+Simulator link:
+https://www.drcmr.dk/BlochSimulator⁠�
+3. What You Should Know Before You Start
+A nuclear spin placed in a static magnetic field B₀ lines up and precesses around the field direction — this precession is called Larmor precession.
+An RF pulse (usually a 90-degree pulse) tips the spin away from the B₀ axis into the transverse plane.
+Once tipped, the spin keeps precessing and slowly returns to its original position — this return is called relaxation, described by two time constants T1 and T2.
+The signal picked up by the receiver coil while the spin relaxes is called the Free Induction Decay (FID) — it looks like a decaying, oscillating wave.
+Studying the FID tells us the Larmor frequency, and the T1/T2 relaxation times of the sample.
+4. Step-by-Step Procedure
+Open the simulator link given above in any web browser (Chrome/Firefox works best; rotate a mobile screen to landscape).
+Set a value for the static magnetic field B₀ using the on-screen slider and note the Larmor frequency shown.
+Choose a starting condition for the spin (equilibrium, pointing along B₀).
+Apply a 90-degree RF pulse using the pulse button and observe the spin vector tipping into the transverse plane.
+Watch the free precession of the spin and note how the signal (FID) decays with time.
+Change the T1 and T2 relaxation values from the menu and repeat the pulse to see how faster/slower relaxation changes the FID shape.
+Record your readings in the observation table below for at least five different settings.
+Sketch the FID waveform you observe for two of your trials in your record.
+5. Observation Table
+S.No
+B0 Field Set
+Larmor Frequency Observed
+T1 / T2 Set
+Nature of FID Signal Observed
+1
+0.25 T
+10.65 MHz
+T1 = 200 ms, T2 = 180 ms
+Low-frequency oscillation, decays within ~1 s
+2
+0.50 T
+21.29 MHz
+T1 = 300 ms, T2 = 150 ms
+Moderately damped oscillating signal
+3
+1.00 T
+42.58 MHz
+T1 = 500 ms, T2 = 250 ms
+Slower decay; several clear oscillation cycles visible
+4
+1.50 T
+63.87 MHz
+T1 = 700 ms, T2 = 100 ms
+Fast decay (short T2); only 2–3 cycles visible before signal vanishes
+5
+2.00 T
+85.16 MHz
+T1 = 1000 ms, T2 = 400 ms
+Slow, long-lived FID with many well-resolved oscillation cycles
+�
+qwerty.docx
+6. Result
+The precession of a nuclear spin about the static field, the effect of an RF pulse, and the decay of the resulting FID signal were studied and verified using the online Bloch simulator.
+7. Precautions / Points to Remember
+Change only one parameter at a time so that you can clearly link cause and effect.
+Allow the animation to fully complete before reading off values.
+Note down the units shown on screen exactly as displayed (Tesla, seconds, Hz, etc.).
+Keep the browser window large enough (or the phone in landscape mode) for the 3D view to render properly.
+�
+QIS_Lab_Manual-1-1-1.pdf
+EXPERIMENT 2
+Create and Visualize Quantum States using a Quantum Circuit and Simulate Projective Measurements
+1. Aim
+To build simple single-qubit and two-qubit states on a quantum circuit simulator, visualise them, and perform projective measurements to verify the expected probabilities.
+2. Software / Online Simulator Required
+IBM Quantum Composer — a free drag-and-drop quantum circuit builder that runs in the browser; no software installation is needed and no login is required for up to 4 qubits.
+Simulator link:
+https://quantum.cloud.ibm.com/composer⁠�
+3. What You Should Know Before You Start
+A qubit's state is written as:
+|ψ⟩ = α|0⟩ + β|1⟩
+where |α|² and |β|² give the probability of measuring 0 or 1.
+Applying gates such as X, H (Hadamard), Y or Z changes the state of a qubit before measurement.
+A Hadamard gate on |0⟩ creates an equal superposition:
+(|0⟩ + |1⟩)/√2
+giving 50% chance of 0 and 50% chance of 1 on measurement.
+Projective measurement collapses the qubit to either |0⟩ or |1⟩ and the simulator reports outcome probabilities after many repeated shots.
+The Bloch sphere and probability histogram in the Composer let you visually confirm the state you built.
+4. Step-by-Step Procedure
+Open the IBM Quantum Composer link given above (sign-in is optional for circuits up to 4 qubits).
+Start a new circuit with one qubit, initially in state |0⟩.
+Drag an X gate onto the qubit line and run the circuit — verify the state flips to |1⟩.
+Reset and this time drag an H gate onto the qubit — observe the resulting superposition on the Bloch sphere/statevector view.
+Add a measurement operation and run the circuit; note the probability of getting 0 and 1 from the histogram.
+Repeat with a two-qubit circuit: apply H on qubit 0, then measure both qubits, and note the outcome probabilities.
+Try at least four different gate combinations (X, H, Y, Z, or combinations) and record the prepared state and measured probabilities each time.
+5. Observation Table
+S.No
+Gate(s) Applied
+Expected State
+P(0) Observed
+P(1) Observed
+Remarks
+1
+X
+|1⟩
+0.00
+1.00
+Deterministic bit flip; matches theory exactly
+2
+H
+(|0⟩ + |1⟩)/√2
+0.49
+0.51
+Near-equal superposition; small statistical spread over 1024 shots
+3
+Y
+i|1⟩
+0.02
+0.98
+Global phase not visible in measurement; probability matches |1⟩
+4
+Z
+|0⟩
+1.00
+0.00
+Pure phase flip; no change in measurement-basis probabilities
+5
+H on q0 (2-qubit, q1 idle)
+(|00⟩ + |10⟩)/√2
+0.50 (q0=0)
+0.50 (q0=1)
+q1 stays 0 throughout, confirming an unentangled product state
+�
+qwerty.docx
+6. Result
+Different single-qubit and two-qubit quantum states were successfully prepared and visualised, and their projective-measurement probabilities were verified to match the expected theoretical values.
+7. Precautions / Points to Remember
+Always reset or start a fresh circuit before building the next state, to avoid leftover gates.
+Add a measurement gate at the end of the circuit — without it, no histogram is produced.
+Run enough shots (default is fine) so that the probability histogram is reliable.
+Compare the observed probability to the theoretically expected value and note any small deviation.
+�
+QIS_Lab_Manual-1-1-1.pdf
+EXPERIMENT 3
+Demonstrate Quantum Circuits using Hadamard and CNOT Gates; Measure Violations of Bell Inequalities
+1. Aim
+To construct entangled Bell states using Hadamard and CNOT gates and to experimentally verify the violation of a Bell/CHSH inequality using an online simulator.
+2. Software / Online Simulator Required
+Quirk – Quantum Circuit Simulator — a free, browser-based drag-and-drop simulator that also has a ready-made Bell Inequality Test (CHSH) example circuit built in.
+Simulator link:
+https://algassert.com/quirk⁠�
+3. What You Should Know Before You Start
+Applying a Hadamard gate on qubit 0 followed by a CNOT gate (qubit 0 as control, qubit 1 as target) creates the entangled Bell state:
+(|00⟩ + |11⟩)/√2
+In an entangled pair, measuring one qubit instantly fixes the outcome of the other, even though each qubit alone looks random.
+Classical (local, non-quantum) theories predict that a combination of correlations, called the CHSH value S, can never exceed 2.
+Quantum entanglement allows this value to go up to about 2.82 (2√2), which is called violation of the Bell inequality.
+Quirk's built-in 'Bell Inequality Test (CHSH)' example circuit is ready-made for this experiment — you can load it directly from the Examples menu.
+4. Step-by-Step Procedure
+Open the Quirk link given above.
+Build a 2-qubit circuit: place an H gate on the top qubit wire, then a CNOT gate (control on top qubit, target on bottom qubit).
+Add measurement to both qubits and observe that the only outcomes are 00 and 11, each with about 50% probability — this confirms entanglement.
+From the Examples menu (top of page), load the ready-made 'Bell Inequality Test (CHSH)' circuit.
+Note the measurement settings (angles) used for each qubit and record the correlation values shown by the simulator.
+Calculate the CHSH value S from the four correlation readings using:
+S = E(a,b) − E(a,b′) + E(a′,b) + E(a′,b′)
+Compare your calculated S with the classical limit of 2 and note whether the inequality is violated.
+5. Observation Table
+S.No
+Circuit / Angle Setting
+Correlation E Value
+CHSH Value S
+Classical Limit
+Violated? (Y/N)
+1
+a = 0°, b = 22.5°
+E(a,b) = 0.70
+2.78
+2
+Y
+2
+a = 0°, b′ = 67.5°
+E(a,b′) = −0.69
+2.78
+2
+Y
+3
+a′ = 45°, b = 22.5°
+E(a′,b) = 0.71
+2.78
+2
+Y
+4
+a′ = 45°, b′ = 67.5°
+E(a′,b′) = 0.68
+2.78
+2
+Y
+�
+qwerty.docx
+6. Result
+The Bell state (|00⟩ + |11⟩)/√2 was successfully created using Hadamard and CNOT gates, and the measured CHSH value was found to exceed the classical limit of 2, confirming violation of the Bell inequality.
+7. Precautions / Points to Remember
+Make sure the CNOT gate's control (dot) and target (circle) are placed on the correct wires.
+Take enough repeated runs before reading the correlation/probability values.
+Note that a small numerical value near 2.82 is the quantum theoretical maximum — do not expect exactly this number from a single run.
+Keep the qubit order (top/bottom) consistent while noting down your readings.
+�
+QIS_Lab_Manual-1-1-1.pdf
+EXPERIMENT 4
+Implement and Simulate the Grover Algorithm and Decoherence Algorithm
+1. Aim
+To implement Grover's search algorithm on a quantum circuit simulator and observe how it amplifies the probability of the correct answer; and to study the effect of decoherence (noise) on a quantum state.
+2. Software / Online Simulator Required
+Quirk – Quantum Circuit Simulator — the same free browser-based simulator used earlier; it has a ready-made 'Grover Search' example and also lets you add noise/measurement to observe decoherence.
+Simulator link:
+https://algassert.com/quirk⁠�
+3. What You Should Know Before You Start
+Grover's algorithm searches an unsorted list of N items in about √N steps, much faster than a classical search which needs about N/2 steps.
+It works by repeatedly applying an 'oracle' (which marks the correct answer) and a 'diffusion' operator (which amplifies the marked answer's probability).
+Each Grover iteration increases the probability of measuring the correct (marked) state; too many iterations can actually reduce it again, so the number of iterations matters.
+Decoherence is the loss of a qubit's clean quantum behaviour due to unwanted interaction with its environment (noise), which reduces the reliability of the answer.
+Simulating noise (bit-flip or phase-flip probability) on a circuit shows how the neat interference pattern of Grover's algorithm gets disturbed by decoherence.
+4. Step-by-Step Procedure
+Open the Quirk link and, from the Examples menu, load the ready-made 'Grover Search' circuit.
+Identify the oracle stage (which marks the target item) and the diffusion stage in the loaded circuit.
+Run the circuit and note the probability of the marked state after one Grover iteration.
+Add one more repetition of the oracle + diffusion block and note how the probability of the correct state changes.
+Continue adding iterations up to about √N and record how probability rises, and then falls if you go beyond the optimum count.
+Next, on a simple 1- or 2-qubit circuit, insert a noise/depolarizing display or randomly apply an extra unwanted gate to mimic decoherence.
+Compare the clean (no-noise) output probabilities with the noisy output probabilities and note the difference.
+5. Observation Table
+S.No
+No. of Qubits
+No. of Grover Iterations
+P(marked state) — No Noise
+P(marked state) — With Noise
+1
+2 (N=4)
+1 (optimum)
+0.94
+0.81
+2
+2 (N=4)
+2 (past optimum)
+0.60
+0.48
+3
+3 (N=8)
+2 (optimum)
+0.96
+0.79
+4
+3 (N=8)
+3 (past optimum)
+0.85
+0.65
+5
+4 (N=16)
+3 (optimum)
+0.90
+0.70
+�
+qwerty.docx
+6. Result
+Grover's algorithm was implemented and shown to amplify the probability of the correct (marked) state with each iteration up to the optimum count; introducing noise was shown to reduce this probability, demonstrating the effect of decoherence.
+7. Precautions / Points to Remember
+Note the optimum number of iterations (close to π√N/4) — going beyond this reduces accuracy, which is expected behaviour, not an error.
+Keep the oracle definition (which state is 'marked') the same throughout a set of trials for a fair comparison.
+When testing decoherence, change only the noise level between trials and keep the rest of the circuit fixed.
+Record probabilities as percentages rounded to two decimal places for easy comparison.
+�
+QIS_Lab_Manual-1-1-1.pdf
+EXPERIMENT 5
+Implement and Simulate the Deutsch–Jozsa Algorithm to Distinguish Constant and Balanced Functions
+1. Aim
+To build the Deutsch–Jozsa circuit on a quantum simulator and use it to determine, with a single query, whether a given hidden function is constant or balanced.
+2. Software / Online Simulator Required
+IBM Quantum Composer — a free browser-based quantum circuit builder, used here to construct the oracle and Deutsch–Jozsa circuit manually.
+Simulator link:
+https://quantum.cloud.ibm.com/composer⁠�
+3. What You Should Know Before You Start
+A function f(x) is constant if it gives the same output (all 0s or all 1s) for every input, and balanced if it gives 0 for exactly half the inputs and 1 for the other half.
+Classically, distinguishing constant from balanced may need up to 2^(n-1)+1 checks in the worst case; the Deutsch–Jozsa algorithm does it with just one query using quantum parallelism.
+The standard circuit: apply X then H to the ancilla (output) qubit, apply H to all input qubits, pass through the oracle for f(x), then apply H again to the input qubits and measure them.
+If all input qubits measure 0, the function is constant. If any input qubit measures 1, the function is balanced.
+4. Step-by-Step Procedure
+Open the IBM Quantum Composer link and start a circuit with 2 qubits (1 input qubit q0, 1 ancilla qubit q1) for the simplest case.
+Set the ancilla qubit q1 to |1⟩ using an X gate, then apply H gates to both q0 and q1.
+Build a 'constant' oracle first — simply do nothing (identity) so f(x) = 0 for all x — then apply H to q0 again and measure q0.
+Run the circuit and note that q0 measures 0 with 100% probability, confirming the function is constant.
+Now change only the oracle to a 'balanced' oracle by adding a CNOT from q0 to q1, keeping everything else the same.
+Apply H to q0 again, measure, and run the circuit — note that q0 now measures 1 with 100% probability, confirming the function is balanced.
+Repeat with a 2-input-qubit version (3 qubits total) using a different balanced oracle to reconfirm the pattern.
+5. Observation Table
+S.No
+Oracle Used
+Actual Function Type
+Measurement on Input Qubit(s)
+Algorithm's Conclusion
+Correct? (Y/N)
+1
+Identity (no gate)
+Constant
+0
+Constant
+Y
+2
+CNOT: q0 → q1
+Balanced
+1
+Balanced
+Y
+3
+X on ancilla only, f(x)=1 ∀x
+Constant
+0
+Constant
+Y
+4
+CNOT: q0→q2, q1→q2 (2-input)
+Balanced
+01
+Balanced
+Y
+�
+qwerty.docx
+6. Result
+The Deutsch–Jozsa algorithm was implemented for both constant and balanced oracles, and in each case a single circuit run correctly identified the type of the hidden function, verifying the quantum speed-up over the classical approach.
+7. Precautions / Points to Remember
+Change only the oracle part of the circuit between trials — keep the initial H gates and final measurement identical.
+Double-check that the ancilla qubit is set to |1⟩ using an X gate before applying the Hadamard gates.
+For a balanced oracle, make sure every input qubit that is meant to influence f(x) is actually connected to the ancilla through a CNOT.
+Record the exact bit string measured on the input qubits, not just 'balanced/constant', so your working is traceable.
+�
+QIS_Lab_Manual-1-1-1.pdf
+EXPERIMENT 6
+Demonstrate Period-Finding on Small Numbers and Outline Key Components of Shor's Algorithm
+1. Aim
+To use a quantum circuit simulator to find the period of a modular exponential function for small numbers, and to identify the main building blocks of Shor's factoring algorithm.
+2. Software / Online Simulator Required
+Quirk – Quantum Circuit Simulator — the same free browser-based simulator; it has a ready-made 'Shor Period Finding' example circuit built in.
+Simulator link:
+https://algassert.com/quirk⁠�
+3. What You Should Know Before You Start
+Shor's algorithm factors large numbers efficiently on a quantum computer by first turning the factoring problem into a period-finding problem.
+For a chosen number N and a random co-prime a, the function
+f(x) = a^x mod N
+repeats itself after every r steps — this repeat length r is called the period.
+The quantum part of Shor's algorithm uses superposition and the Quantum Fourier Transform (QFT) to find this period r much faster than any classical method.
+Once r is known, simple classical arithmetic (computing the GCD of a^(r/2) ± 1 with N) gives the factors of N.
+The main building blocks are:
+Superposition of inputs
+Modular exponentiation as a quantum oracle
+Quantum Fourier Transform
+Measurement followed by classical post-processing
+4. Step-by-Step Procedure
+Open the Quirk link and, from the Examples menu, load the ready-made 'Shor Period Finding' circuit.
+Identify the three stages in the loaded circuit: input superposition, modular exponentiation (oracle for a^x mod N), and the QFT block.
+Choose a small value of N (for example N = 15) and a co-prime value of a (for example a = 2, 4, 7, 8, 11, 13) as suggested in the example.
+Run the circuit and note the measurement outcomes on the top (input) register.
+Convert the measured value to a fraction of 2^n (n = number of input qubits) and use continued fractions to estimate the period r.
+Verify your value of r by checking that:
+a^r mod N = 1
+using ordinary calculation. 7. Repeat for at least three different values of a (keeping N fixed) and tabulate the periods you obtain. 8. Using the periods found, compute the GCD to find one factor of N and confirm it divides N exactly.
+5. Observation Table
+S.No
+N Chosen
+a Chosen
+Measured Output
+Period r Obtained
+Verified (aʳ mod N = 1)?
+1
+15
+2
+4/8 (binary 100)
+4
+Y (2⁴ mod 15 = 1)
+2
+15
+7
+2/8 (binary 010)
+4
+Y (7⁴ mod 15 = 1)
+3
+15
+11
+4/8 (binary 100)
+2
+Y (11² mod 15 = 1)
+4
+15
+13
+4/8 (binary 100)
+4
+Y (13⁴ mod 15 = 1)
+�
+qwerty.docx
+6. Result
+Period-finding was successfully demonstrated on small numbers using the quantum circuit simulator, and the periods obtained were verified classically; the key components of Shor's algorithm — superposition, modular exponentiation, QFT, and classical post-processing — were identified and studied.
+7. Precautions / Points to Remember
+Choose only values of 'a' that are co-prime to N (no common factor other than 1), as the algorithm requires this.
+Use enough input qubits so that 2^n is comfortably larger than N, for an accurate period estimate.
+Remember that individual runs may sometimes give a measurement that does not directly reveal the period — repeat a few times and use continued fractions to interpret the result.
+Always verify your final period value with a direct classical calculation before recording the result.
+�
+QIS_Lab_Manual-1-1-1.pdf
+COMPLETE EXPERIMENT LIST
+NMR Phenomenon and Signal Analysis
+Quantum States and Projective Measurements
+Bell States and CHSH Inequality
+Grover Algorithm and Decoherence
+Deutsch–Jozsa Algorithm
+Period-Finding and Shor's Algorithm
+The observation values above are taken directly from your filled observation-table file, while the experiment aims, theory/background, procedures, results, and precautions follow the QIS Lab Manual. �
+qwerty.docx
